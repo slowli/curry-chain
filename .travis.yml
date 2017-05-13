@@ -11,4 +11,5 @@ node_js:
 before_script:
   - npm install -g mocha-cli
 script:
+  - npm run-script lint
   - npm test

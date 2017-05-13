@@ -1,7 +1,8 @@
 'use strict';
 /* eslint-env node,mocha */
 
-const expect = require('chai').expect;
+const expect = require('chai')
+  .use(require('dirty-chai')).expect;
 
 const index = require('../lib/indexing');
 
@@ -98,9 +99,9 @@ describe('index', function () {
 
     it('should return undefined when called with a non-existent simple index', function () {
       var obj = ['foo', {x: 3, y: 4}, 'bar'];
-      expect(index.get(obj, '5')).to.be.undefined;
-      expect(index.get(obj, 'foo')).to.be.undefined;
-      expect(index.get(obj, 'bar')).to.be.undefined;
+      expect(index.get(obj, '5')).to.be.undefined();
+      expect(index.get(obj, 'foo')).to.be.undefined();
+      expect(index.get(obj, 'bar')).to.be.undefined();
     });
 
     it('should return a deeply nested element for a compound index', function () {
@@ -117,11 +118,11 @@ describe('index', function () {
 
     it('should return undefined for a non-existent compound index', function () {
       var obj = ['foo', {x: 3, y: 4}, 'bar'];
-      expect(index.get(obj, [1, 'z'])).to.be.undefined;
-      expect(index.get(obj, '1.foo')).to.be.undefined;
-      expect(index.get(obj, '1.x.0')).to.be.undefined;
-      expect(index.get(obj, '0.x')).to.be.undefined;
-      expect(index.get(obj, '1.y.bar')).to.be.undefined;
+      expect(index.get(obj, [1, 'z'])).to.be.undefined();
+      expect(index.get(obj, '1.foo')).to.be.undefined();
+      expect(index.get(obj, '1.x.0')).to.be.undefined();
+      expect(index.get(obj, '0.x')).to.be.undefined();
+      expect(index.get(obj, '1.y.bar')).to.be.undefined();
     });
   });
 

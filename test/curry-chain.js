@@ -1,7 +1,9 @@
 'use strict';
 /* eslint-env node,mocha */
 
-const expect = require('chai').use(require('sinon-chai')).expect;
+const expect = require('chai')
+  .use(require('sinon-chai'))
+  .use(require('dirty-chai')).expect;
 const sinon = require('sinon');
 
 const curry = require('..');
@@ -31,7 +33,7 @@ function describeCurry (curry, label) {
 
         var result = fn.foo(10).bar(20).done();
         expect(result).to.equal('Hello universe');
-        expect(original).to.have.been.calledOnce;
+        expect(original).to.have.been.calledOnce();
         expect(original).to.have.been.calledWith(10, 20);
       });
 
@@ -44,7 +46,7 @@ function describeCurry (curry, label) {
 
         var result = fn.foo(10).bar(20).foo(30).done();
         expect(result).to.equal('Hello universe');
-        expect(original).to.have.been.calledOnce;
+        expect(original).to.have.been.calledOnce();
         expect(original).to.have.been.calledWith(30, 20);
       });
 
@@ -57,7 +59,7 @@ function describeCurry (curry, label) {
 
         var result = fn.foo(10).done();
         expect(result).to.equal('Hello universe');
-        expect(original).to.have.been.calledOnce;
+        expect(original).to.have.been.calledOnce();
         expect(original).to.have.been.calledWith(10);
       });
 
@@ -71,7 +73,7 @@ function describeCurry (curry, label) {
 
         var result = fn.foo(10).bar(20).bazz(30).done();
         expect(result).to.equal('Hello universe');
-        expect(original).to.have.been.calledOnce;
+        expect(original).to.have.been.calledOnce();
         expect(original).to.have.been.calledWith(10, 30);
       });
 
@@ -108,7 +110,7 @@ function describeCurry (curry, label) {
           __languageChains: [ 'and' ]
         });
 
-        expect(fn.and).to.exist;
+        expect(fn.and).to.exist();
         expect(fn.foo(5).and.bar(10).done()).to.deep.equal([5, 10]);
       });
 
