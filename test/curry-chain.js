@@ -300,6 +300,8 @@ function describeCurry (curry, label) {
       });
 
       it('should not explode with a lot of computations', function () {
+        this.timeout(5000);
+
         var fn = curry.fn((x, y) => [x, y]).where
           .arg(0).has.setter('foo').and
           .arg(1).has.setter('bar')
