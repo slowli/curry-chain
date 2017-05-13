@@ -1,0 +1,28 @@
+{
+  "name": "curry-chain",
+  "version": "1.0.0",
+  "description": "Chainable function currying",
+  "main": "index.js",
+  "files": [
+    "lib",
+    "index.js",
+    "fn.js"
+  ],
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "keywords": [
+    "chainable",
+    "chain",
+    "currying",
+    "syntactic sugar"
+  ],
+  "author": "Alex Ostrovski <ostrovski.alex@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0",
+    "sinon": "^2.2.0",
+    "sinon-chai": "^2.10.0"
+  }
+}
