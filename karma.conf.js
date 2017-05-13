@@ -24,7 +24,10 @@ module.exports = function (config) {
     },
 
     browserify: {
-      debug: true
+      debug: true,
+      transform: [
+        [ 'babelify', { presets: [ 'es2015' ] } ]
+      ]
     },
 
     // test results reporter to use
@@ -45,7 +48,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['Firefox', 'PhantomJS'],
 
     browserNoActivityTimeout: 30000,
 
