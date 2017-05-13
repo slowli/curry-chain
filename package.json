@@ -21,7 +21,8 @@
   },
   "scripts": {
     "lint": "semistandard",
-    "test": "mocha test/*.js"
+    "test": "mocha test/*.js",
+    "test-browser": "karma start"
   },
   "keywords": [
     "chainable",
@@ -32,8 +33,14 @@
   "author": "Alex Ostrovski <ostrovski.alex@gmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "browserify": "^14.3.0",
     "chai": "^3.5.0",
     "dirty-chai": "^1.2.2",
+    "karma": "^1.7.0",
+    "karma-browserify": "^5.1.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.3",
     "mocha": "^3.3.0",
     "semistandard": "^11.0.0",
     "sinon": "^2.2.0",
