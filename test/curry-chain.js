@@ -306,10 +306,10 @@ function describeCurry (curry, label) {
           .arg(0).has.setter('foo').and
           .arg(1).has.setter('bar')
           .done();
-        for (var i = 0; i < 100000; i++) {
+        for (var i = 0; i < 25000; i++) {
           fn = fn.foo(i).bar(i);
         }
-        expect(fn.done()).to.deep.equal([99999, 99999]);
+        expect(fn.done()).to.deep.equal([24999, 24999]);
       });
     });
   });
