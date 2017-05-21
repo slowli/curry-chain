@@ -43,5 +43,5 @@ script:
     else \
       npm run-script test-browser; \
     fi
-after_success:
-  - [[ "$TEST_BROWSERS" == 0 ]] && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+after_success: |
+  [[ "$TEST_BROWSERS" == 0 ]] && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
