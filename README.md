@@ -1,11 +1,14 @@
 # Chainable Currying
 
 [![Build status][travis-image]][travis-url]
+[![Code coverage][coveralls-image]][coveralls-url]
 [![Code style][code-style-image]][code-style-url]
 [![License][license-image]][license-url]
 
 [travis-image]: https://img.shields.io/travis/slowli/curry-chain.svg?style=flat-square
 [travis-url]: https://travis-ci.org/slowli/curry-chain
+[coveralls-image]: https://img.shields.io/coveralls/slowli/curry-chain.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/github/slowli/curry-chain
 [code-style-image]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square
 [code-style-url]: https://github.com/Flet/semistandard
 [license-image]: https://img.shields.io/github/license/slowli/curry-chain.svg?style=flat-square
