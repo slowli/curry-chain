@@ -45,3 +45,11 @@ script:
     fi
 after_success: |
   [[ "$TEST_BROWSERS" == 0 ]] && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+deploy:
+  provider: npm
+  email: ostrovski.alex@gmail.com
+  api_key: $NPM_KEY
+  on:
+    tags: true
+    node: "7"
