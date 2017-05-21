@@ -193,7 +193,7 @@ var curryAdd = curry.fn((x, y) => x + y).where
 [1, 2, 3].map(curryAdd.with.x(10)); // returns [11, 12, 13]
 ```
 
-Unfortunately, the functional implementation is ~3 times slower than the object one.
+Unfortunately, the functional implementation is ~2 times slower than the object one.
 This is because the object implementation can use prototypes in order to reuse
 setters during chaining; the functional one needs to create new functions
 for setters during each chained call.
