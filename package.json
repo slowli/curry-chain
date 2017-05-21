@@ -23,7 +23,7 @@
     "lint": "semistandard",
     "test": "mocha test/*.js",
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcov -- -R spec",
-    "ci-cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "ci-cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
     "browser": "browserify index.js -t [ babelify --presets [ es2015 ] ] | uglifyjs -o curry-chain.min.js",
     "test-browser": "karma start"
   },
