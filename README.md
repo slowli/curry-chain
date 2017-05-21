@@ -5,13 +5,13 @@
 [![License][license-image]][license-url]
 
 [travis-image]: https://img.shields.io/travis/slowli/curry-chain.svg?style=flat-square
-[travis-url]: https://travis-ci.com/slowli/curry-chain
+[travis-url]: https://travis-ci.org/slowli/curry-chain
 [code-style-image]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square
 [code-style-url]: https://github.com/Flet/semistandard
 [license-image]: https://img.shields.io/github/license/slowli/curry-chain.svg?style=flat-square
 [license-url]: https://opensource.org/licenses/Apache-2.0
 
-**curry-chain** is a library for creating literary, [chai][chai]-style curryied
+**curry-chain** is a library for creating literary, [chai][chai]-style curried
 functions.
 
 [chai]: http://chaijs.com/
