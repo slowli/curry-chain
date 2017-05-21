@@ -9,6 +9,9 @@
   "bugs": {
     "url": "https://github.com/slowli/curry-chain/issues"
   },
+  "engines": {
+    "node": ">=4.1.0"
+  },
   "main": "index.js",
   "files": [
     "lib",
