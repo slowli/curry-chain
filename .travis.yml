@@ -1,10 +1,13 @@
 dist: trusty
 sudo: false
-addons:
-  - firefox: "45"
 cache:
   directories:
     - node_modules
+branches:
+  only:
+    - master
+    # tags
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
 language: node_js
 node_js:
