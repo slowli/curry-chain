@@ -44,6 +44,11 @@ describe('updaters', function () {
       expect(array).to.deep.equal([1, 2, 3]);
     });
 
+    it('should push element to the undefined old value', function () {
+      var array = U.push(undefined, 3);
+      expect(array).to.deep.equal([3]);
+    });
+
     it('should work within an index function', function () {
       var updater = U.index(1, U.push);
       var args = [ { foo: 'bar' }, [3] ];

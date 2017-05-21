@@ -267,6 +267,18 @@ function describeCurry (curry, label) {
         });
       });
 
+      it('should allow specifying language chains as an array', function () {
+        var fn = curry.fn(x => x).where
+          .arg(0).has.options('foo', 'bar')
+          .language(['with', 'and'])
+          .done();
+
+        expect(fn.with.foo('!').and.bar(3).done()).to.deep.equal({
+          foo: '!',
+          bar: 3
+        });
+      });
+
       it('should allow appending language chains', function () {
         var fn = curry.fn(x => x).where
           .arg(0).has.options('foo', 'bar')
