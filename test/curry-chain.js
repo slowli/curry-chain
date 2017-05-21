@@ -311,6 +311,15 @@ function describeCurry (curry, label) {
         expect(strFn.plus(1).plus(2).plus(3).done()).to.equal('123');
       });
 
+      it('should work in traditional currying', function () {
+        var fn = curry.fn((x, y) => x + y).where
+          .arg(0).has.setter('x').and
+          .arg(1).has.setter('y')
+          .done();
+
+        expect([1, 2, 3].map(fn.x(10).done)).to.deep.equal([11, 12, 13]);
+      });
+
       it('should not explode with a lot of computations', function () {
         this.timeout(5000);
 
@@ -324,6 +333,37 @@ function describeCurry (curry, label) {
         expect(fn.done()).to.deep.equal([14999, 14999]);
       });
     });
+
+    if (typeof curry === 'function') {
+      // Test direct interface
+
+      describe('terminator-less literary inteface', function () {
+        it('should create a function', function () {
+          var fn = curry.fn((x, y) => [x, y]).where
+            .arg(0).has.setter('foo').and
+            .arg(1).has.setter('bar')();
+
+          expect(fn.foo).to.be.a('function');
+          expect(fn.bar).to.be.a('function');
+        });
+
+        it('should proxy calls to the orignal function', function () {
+          var fn = curry.fn((x, y) => [x, y]).where
+            .arg(0).has.setter('foo').and
+            .arg(1).has.setter('bar')();
+
+          expect(fn.foo(10).bar(20)()).to.deep.equal([10, 20]);
+        });
+
+        it('should work in traditional currying', function () {
+          var fn = curry.fn((x, y) => x + y).where
+            .arg(0).has.setter('x').and
+            .arg(1).has.setter('y')();
+
+          expect([1, 2, 3].map(fn.x(10))).to.deep.equal([11, 12, 13]);
+        });
+      });
+    }
   });
 }
 
