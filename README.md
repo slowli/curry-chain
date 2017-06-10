@@ -179,11 +179,11 @@ sizedCircle.x(5).y(10).done();
 ### Functional interface
 
 `curry` is implemented using objects. There is also a purely functional implementation,
-available via `require('chain-curry/fn')`. Unlike the default implementation,
+available via `require('curry-chain/fn')`. Unlike the default implementation,
 the functional one does not require the `done` terminator (although it still works):
 
 ```javascript
-var curry = require('chain-curry/fn');
+var curry = require('curry-chain/fn');
 
 var curryAdd = curry.fn((x, y) => x + y).where
   .arg(0).has.setter('x').and
